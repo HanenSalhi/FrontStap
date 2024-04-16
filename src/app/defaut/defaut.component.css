@@ -1,0 +1,88 @@
+/* Container principal */
+.defaut-container {
+  margin: 20px;
+}
+
+/* Styles pour les filtres */
+.filter-inputs {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-inputs label {
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-inputs input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.filter-inputs input[type="text"]:focus {
+  border-color: #5f9ea0; /* Changement de couleur au focus */
+}
+
+/* Styles pour le tableau */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+  transition: background-color 0.3s ease; /* Effet de transition de couleur */
+}
+
+th:hover {
+  background-color: #5f9ea0; /* Changement de couleur au survol */
+  color: #fff; /* Changement de couleur du texte */
+}
+
+/* Style pour les lignes impaires */
+tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Style pour les messages de chargement */
+.loading {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+  color: #666;
+}
+
+/* Effet de survol sur les lignes */
+tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Style pour le texte dans les cellules */
+td {
+  color: #333;
+}
+
+/* Style pour les liens dans les cellules */
+td a {
+  color: #5f9ea0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+td a:hover {
+  color: #3a7a7d; /* Changement de couleur au survol */
+}

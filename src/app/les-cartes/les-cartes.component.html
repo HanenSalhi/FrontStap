@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angular App</title>
+</head>
+
+<body>
+  <div>
+    <h2>Filtres :</h2>
+    <form (submit)="applyFilters()">
+      <label for="dateCreation">Date de création :</label>
+      <input type="date" id="dateCreation" name="dateCreation" [(ngModel)]="dateCreation">
+
+      <label for="matricule">Matricule :</label>
+      <input type="text" id="matricule" name="matricule" [(ngModel)]="matricule">
+
+      <label for="nomProduit">Nom de produit :</label>
+      <input type="text" id="nomProduit" name="nomProduit" [(ngModel)]="nomProduit">
+
+      <button type="submit">Appliquer</button>
+    </form>
+  </div>
+  <div>
+    <h2>Téléchargement CSV :</h2>
+    <button (click)="downloadCSV()">Télécharger CSV</button>
+  </div>
+
+
+  <div *ngIf="cartes">
+    <h2>Liste des cartes :</h2>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+      <thead>
+        <tr style="background-color: #f2f2f2; border: 1px solid #ddd; padding: 8px; text-align: left;">
+          <th style="padding: 8px;">Numéro de série</th>
+          <th style="padding: 8px;">Matricule</th>
+          <th style="padding: 8px;">Date de création</th>
+          <th style="padding: 8px;">Date de modification</th>
+           <th style="padding: 8px;">Nom de Produit </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let carte of cartes" style="background-color: #fff; border: 1px solid #ddd;">
+          <td style="padding: 8px;">{{ carte.numeroSerie }}</td>
+          <td style="padding: 8px;">{{ carte.matricule }}</td>
+          <td style="padding: 8px;">{{ carte.dateCreation }}</td>
+          <td style="padding: 8px;">{{ carte.dateModification }}</td>
+          <td style="padding: 8px;">{{ carte.carte1.designation}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

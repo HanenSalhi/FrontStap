@@ -1,0 +1,38 @@
+<div>
+  <h2>Liste des Défauts</h2>
+  <label for="matricule">Declaré par?:</label>
+  <input type="text" id="matricule" [(ngModel)]="matricule" (input)="filterDefauts()">
+  <label for="numeroSerie">carte:</label>
+  <input type="text" id="numeroSerie" [(ngModel)]="numeroSerie" (input)="filterDefauts()">
+  <label for="libelle"> Motif:</label>
+  <input type="text" id="libelle" [(ngModel)]="libelle" (input)="filterDefauts()">
+  <label for="uap">UAP:</label>
+  <input type="text" id="uap" [(ngModel)]="uap" (input)="filterDefauts()">
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Declaré par </th>
+        <th>Carte</th>
+        <th>Motif</th>
+        <th>Date de Création</th>
+        <th>Date de Modification</th>
+        <th>Nom Produit</th>
+        <th>UAP</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let defaut of filteredDefauts">
+        <td>{{ defaut.id }}</td>
+        <td>{{ defaut.utilisateur.matricule }}</td>
+        <td>{{ defaut.carteR.numeroSerie }}</td>
+        <td>{{ defaut.nc.libelle }}</td>
+        <td>{{ defaut.dateCreation }}</td>
+        <td>{{ defaut.dateModification }}</td>
+        <td>{{ defaut.carteR.carte1.designation }}</td>
+        <td>{{ defaut.carteR.carte1.uap }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

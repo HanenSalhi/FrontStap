@@ -1,0 +1,17 @@
+<div *ngIf="statistics">
+  <ngx-charts-bar-vertical
+    *ngFor="let data of statistics"
+    [view]="[1300,600]"
+    [scheme]="colorScheme"
+    [results]="data.series"
+    [gradient]="false"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    xAxisLabel="code"
+    yAxisLabel="Quantité"
+    [showDataLabel]="true">
+  </ngx-charts-bar-vertical>
+</div>

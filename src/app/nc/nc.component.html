@@ -1,0 +1,44 @@
+<div class="nc-container">
+  <h2>Liste des Non-conformités (NC)</h2>
+
+  <!-- Champs de filtrage -->
+  <div class="filter-inputs">
+    <label for="code">Code:</label>
+    <input type="text" id="code" [(ngModel)]="filterCode" (input)="applyFilters()">
+
+    <label for="typeDefaut">Type de Défaut:</label>
+    <input type="text" id="typeDefaut" [(ngModel)]="filterTypeDefaut" (input)="applyFilters()">
+
+    <label for="utilisateur">Utilisateur:</label>
+    <input type="text" id="utilisateur" [(ngModel)]="filterUtilisateur" (input)="applyFilters()">
+
+    <label for="libelle">Libellé:</label>
+    <input type="text" id="libelle" [(ngModel)]="filterLibelle" (input)="applyFilters()">
+  </div>
+
+  <!-- Tableau pour afficher les données NC -->
+  <table class="nc-table">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Type de Défaut</th>
+        <th>Utilisateur</th>
+        <th>Libellé</th>
+        <th>Date de creation</th>
+        <th>Date de mise a jour</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let nc of filteredNCs">
+        <td>{{ nc.code }}</td>
+        <td>{{ nc.typeDefaut }}</td>
+        <td>{{ nc.utilisateur }}</td>
+        <td>{{ nc.libelle }}</td>
+        <td>{{ nc.dateCreation }}</td>
+        <td>{{ nc.dateMiseAJour}}</td>
+
+
+      </tr>
+    </tbody>
+  </table>
+</div>

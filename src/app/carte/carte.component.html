@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angular App</title>
+</head>
+
+<body>
+  <button (click)="downloadCSV()">Télécharger CSV</button>
+  <div class="time-container">
+    <p>Temps actuel : {{ currentTime }}</p>
+  </div>
+
+  <div class="container">
+    <label for="code">Code:</label>
+    <input type="text" id="code" [(ngModel)]="code">
+    <label for="designation">Désignation:</label>
+    <input type="text" id="designation" [(ngModel)]="designation">
+    <label for="date">Date:</label>
+    <input type="text" id="date" [(ngModel)]="date" (ngModelChange)="date = formatDate($event)">
+    <button (click)="searchByCriteria()">Rechercher</button>
+  </div>
+
+  <div *ngIf="cartes && cartes.length > 0" class="cartes-container">
+    <h2>Liste des Produits</h2>
+    <table class="cartes-table">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Désignation</th>
+          <th>Date d'entrée</th>
+          <th>Date de sortie</th>
+          <th>uap</th>
+          <th>crée par</th>
+          <th>Modifiée par</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let carte of cartes">
+          <td>{{ carte.code }}</td>
+          <td>{{ carte.designation }}</td>
+          <td>{{ carte.dateIn }}</td>
+          <td>{{ carte.dateOut }}</td>
+          <td>{{ carte.uap }}</td>
+          <td>{{ carte.creePar.matricule }}</td>
+          <td>{{ carte.modifiePar.matricule }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="!cartes || cartes.length === 0">
+    <p class="no-cards">Aucune carte trouvée.</p>
+  </div>
+</body>
+
+</html>

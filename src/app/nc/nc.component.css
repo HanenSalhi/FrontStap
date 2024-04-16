@@ -1,0 +1,39 @@
+/* Styles pour le conteneur principal */
+.nc-container {
+  margin: 20px;
+}
+
+/* Styles pour les champs de filtrage */
+.filter-inputs {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-inputs label {
+  margin-right: 10px;
+}
+
+.filter-inputs input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Styles pour le tableau */
+.nc-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nc-table th, .nc-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.nc-table th {
+  background-color: #f2f2f2;
+}

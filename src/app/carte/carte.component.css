@@ -1,0 +1,49 @@
+.container {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.time-container {
+  font-size: 20px;
+  color: #333;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+
+.cartes-container {
+  margin-top: 20px;
+}
+
+.cartes-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cartes-table th,
+.cartes-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.cartes-table th {
+  background-color: #f2f2f2;
+}
+
+.no-cards {
+  color: #999;
+}
